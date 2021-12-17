@@ -22,7 +22,7 @@ const DashReview = () => {
     }; //customer review information
 
     axios
-      .post("https://young-journey-72414.herokuapp.com/reviews", review)
+      .post("http://localhost:5000/reviews", review)
       .then((data) => {
         const isAdded = data.data.insertedId;
         if (isAdded) {

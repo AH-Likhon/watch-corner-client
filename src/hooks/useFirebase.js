@@ -27,19 +27,19 @@ const useFirebase = () => {
 
   const auth = getAuth();
 
- 
+
   /* ---------------------------------- POVIDERS -------------------------------- */
-  
+
   const googleProvider = new GoogleAuthProvider();
   const facebookProvider = new FacebookAuthProvider();
   const twitterProvider = new TwitterAuthProvider();
 
- /* -------------------------------- Update User Info ------------------------------ */
+  /* -------------------------------- Update User Info ------------------------------ */
   const updateUserInfo = (name) => {
     updateProfile(auth.currentUser, {
       displayName: name,
     })
-      .then(() => {})
+      .then(() => { })
       .catch((err) => {
         popupError(err.message);
       });
@@ -47,7 +47,7 @@ const useFirebase = () => {
 
 
   /* -------------------------------- CREATE NEW ACCOUNT --------------------------- */
-  
+
   const createNewAccount = (email, password, name) => {
     setLoading(true);
     createUserWithEmailAndPassword(auth, email, password)
@@ -120,7 +120,7 @@ const useFirebase = () => {
   /* -------------------------------------------------------------------------- */
   const saveUser = (email, displayName, method) => {
     const user = { email, displayName };
-    fetch("https://young-journey-72414.herokuapp.com/users", {
+    fetch("http://localhost:5000/users", {
       method: method,
       headers: {
         "content-type": "application/json",
@@ -134,7 +134,7 @@ const useFirebase = () => {
   /* -------------------------------------------------------------------------- */
   useEffect(() => {
     axios
-      .get(`https://young-journey-72414.herokuapp.com/users/${user?.email}`)
+      .get(`http://localhost:5000/users/${user?.email}`)
       .then((data) => setAdmin(data.data.admin));
   }, [user?.email]);
 

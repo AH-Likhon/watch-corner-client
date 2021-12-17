@@ -15,7 +15,7 @@ const ManageProducts = () => {
     setLoading(true);
     setTimeout(() => {
       axios
-        .get("https://young-journey-72414.herokuapp.com/watches")
+        .get("http://localhost:5000/watches")
         .then((data) => {
           setWatches(data.data);
           setLoading(false);
@@ -39,7 +39,7 @@ const ManageProducts = () => {
         if (result.isConfirmed) {
           axios
             .delete(
-              `https://young-journey-72414.herokuapp.com/manage_order/watch/${id}`
+              `http://localhost:5000/manage_order/watch/${id}`
             )
             .then((data) => {
               const isDeleted = data.data.deletedCount;

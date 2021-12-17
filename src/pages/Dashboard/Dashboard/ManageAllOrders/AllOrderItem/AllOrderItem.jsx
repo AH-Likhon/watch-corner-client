@@ -40,7 +40,7 @@ const AllOrderItem = ({ order, index, handleOrderDelete }) => {
         }
         axios
           .put(
-            `https://young-journey-72414.herokuapp.com/all_orders/${_id}`,
+            `http://localhost:5000/all_orders/${_id}`,
             order
           )
           .then((data) => {

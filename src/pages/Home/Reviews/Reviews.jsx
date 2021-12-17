@@ -12,7 +12,7 @@ const Reviews = () => {
     setLoading(true);
     setTimeout(() => {
       axios
-        .get("https://young-journey-72414.herokuapp.com/reviews")
+        .get("http://localhost:5000/reviews")
         .then((data) => {
           setReviews(data.data);
           setLoading(false);

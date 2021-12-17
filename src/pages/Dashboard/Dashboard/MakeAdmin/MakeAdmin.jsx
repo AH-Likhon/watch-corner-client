@@ -14,7 +14,7 @@ const MakeAdmin = () => {
     setLoading(true);
     setTimeout(() => {
       axios
-        .get("https://young-journey-72414.herokuapp.com/admins")
+        .get("http://localhost:5000/admins")
         .then((data) => {
           setAdmins(data.data);
           setLoading(false);
@@ -35,7 +35,7 @@ const MakeAdmin = () => {
       email: data.email,
     };
     axios
-      .put("https://young-journey-72414.herokuapp.com/users/admin", adminInfo)
+      .put("http://localhost:5000/users/admin", adminInfo)
       .then((data) => {
         if (data.data.modifiedCount) {
           popupSuccess("create admin");

@@ -14,7 +14,7 @@ const Booking = () => {
   const [watch, setWatch] = useState({});
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
-  const url = `https://young-journey-72414.herokuapp.com/watch/${id}`;
+  const url = `http://localhost:5000/watch/${id}`;
 
   useEffect(() => {
     setLoading(true);
@@ -45,7 +45,7 @@ const Booking = () => {
 
     axios
       .post(
-        "https://young-journey-72414.herokuapp.com/product/booking",
+        "http://localhost:5000/product/booking",
         orderInfo
       )
       .then((data) => {

@@ -20,7 +20,7 @@ const Home = () => {
     setLoading(true);
     setTimeout(() => {
       axios
-        .get("https://young-journey-72414.herokuapp.com/watches?limit=6")
+        .get("http://localhost:5000/watches?limit=6")
         .then((data) => {
           setWatches(data.data);
           setLoading(false);

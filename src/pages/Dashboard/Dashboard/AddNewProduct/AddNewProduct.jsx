@@ -26,7 +26,7 @@ const AddNewProduct = () => {
     }; //new watch object information
 
     axios
-      .post("https://young-journey-72414.herokuapp.com/watches", newWatch)
+      .post("http://localhost:5000/watches", newWatch)
       .then((data) => {
         const isAdded = data.data.insertedId;
         if (isAdded) {

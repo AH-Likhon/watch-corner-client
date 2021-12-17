@@ -14,7 +14,7 @@ const ManageAllOrders = () => {
     setLoading(true);
     setTimeout(() => {
       axios
-        .get("https://young-journey-72414.herokuapp.com/all_orders")
+        .get("http://localhost:5000/all_orders")
         .then((data) => {
           setAllOrders(data.data);
           setLoading(false);
@@ -37,7 +37,7 @@ const ManageAllOrders = () => {
       if (result.isConfirmed) {
         axios
           .delete(
-            `https://young-journey-72414.herokuapp.com/my_order_list/${id}`
+            `http://localhost:5000/my_order_list/${id}`
           )
           .then((data) => {
             console.log(data);

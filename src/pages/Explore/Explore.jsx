@@ -16,7 +16,7 @@ const Explore = () => {
     setLoading(true);
     setTimeout(() => {
       axios
-        .get("https://young-journey-72414.herokuapp.com/watches")
+        .get("http://localhost:5000/watches")
         .then((data) => {
           setWatches(data.data);
           setLoading(false);
