@@ -12,7 +12,7 @@ const Reviews = () => {
     setLoading(true);
     setTimeout(() => {
       axios
-        .get("http://localhost:5000/reviews")
+        .get("https://stormy-plateau-29124.herokuapp.com/reviews")
         .then((data) => {
           setReviews(data.data);
           setLoading(false);

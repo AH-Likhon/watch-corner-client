@@ -15,7 +15,7 @@ const ManageProducts = () => {
     setLoading(true);
     setTimeout(() => {
       axios
-        .get("http://localhost:5000/watches")
+        .get("https://stormy-plateau-29124.herokuapp.com/watches")
         .then((data) => {
           setWatches(data.data);
           setLoading(false);
@@ -39,7 +39,7 @@ const ManageProducts = () => {
         if (result.isConfirmed) {
           axios
             .delete(
-              `http://localhost:5000/manage_order/watch/${id}`
+              `https://stormy-plateau-29124.herokuapp.com/manage_order/watch/${id}`
             )
             .then((data) => {
               const isDeleted = data.data.deletedCount;

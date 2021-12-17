@@ -26,7 +26,7 @@ const AddNewProduct = () => {
     }; //new watch object information
 
     axios
-      .post("http://localhost:5000/watches", newWatch)
+      .post("https://stormy-plateau-29124.herokuapp.com/watches", newWatch)
       .then((data) => {
         const isAdded = data.data.insertedId;
         if (isAdded) {
@@ -197,12 +197,12 @@ const AddNewProduct = () => {
               <small>Description is required.</small>
             )}
           </FloatingLabel>
-          <small>
+          {/* <small>
             Follow the link to get a quick descriptions{" "}
             <a target="_blank" href="https://www.bremont.com/">
               www.bremont.com
             </a>{" "}
-          </small>
+          </small> */}
         </Form.Group>
 
         <button className="btn-add" type="submit">

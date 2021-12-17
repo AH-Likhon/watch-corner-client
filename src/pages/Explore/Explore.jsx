@@ -16,7 +16,7 @@ const Explore = () => {
     setLoading(true);
     setTimeout(() => {
       axios
-        .get("http://localhost:5000/watches")
+        .get("https://stormy-plateau-29124.herokuapp.com/watches")
         .then((data) => {
           setWatches(data.data);
           setLoading(false);

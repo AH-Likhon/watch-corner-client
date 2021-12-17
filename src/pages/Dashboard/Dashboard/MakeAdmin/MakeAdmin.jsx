@@ -14,7 +14,7 @@ const MakeAdmin = () => {
     setLoading(true);
     setTimeout(() => {
       axios
-        .get("http://localhost:5000/admins")
+        .get("https://stormy-plateau-29124.herokuapp.com/admins")
         .then((data) => {
           setAdmins(data.data);
           setLoading(false);
@@ -35,7 +35,7 @@ const MakeAdmin = () => {
       email: data.email,
     };
     axios
-      .put("http://localhost:5000/users/admin", adminInfo)
+      .put("https://stormy-plateau-29124.herokuapp.com/users/admin", adminInfo)
       .then((data) => {
         if (data.data.modifiedCount) {
           popupSuccess("create admin");

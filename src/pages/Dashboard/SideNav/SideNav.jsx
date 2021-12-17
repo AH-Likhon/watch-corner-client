@@ -67,8 +67,8 @@ const SideNav = () => {
                 <AiIcons.AiOutlineClose />
               </Link>
             </li>
-            {/* <h2 className="ms-4">Dashboard</h2> */}
-            <img className="dash-logo" src={logo} alt="" />
+            <h2 className="ms-4">Watch Corner</h2>
+            {/* <img className="dash-logo" src={logo} alt="" /> */}
             <hr />
             {sidebarData.map((item, index) => {
               return (

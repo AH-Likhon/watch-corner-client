@@ -120,7 +120,7 @@ const useFirebase = () => {
 
   const saveUser = (email, displayName, method) => {
     const user = { email, displayName };
-    fetch("http://localhost:5000/users", {
+    fetch("https://stormy-plateau-29124.herokuapp.com/users", {
       method: method,
       headers: {
         "content-type": "application/json",
@@ -133,7 +133,7 @@ const useFirebase = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/users/${user?.email}`)
+      .get(`https://stormy-plateau-29124.herokuapp.com/users/${user?.email}`)
       .then((data) => setAdmin(data.data.admin));
   }, [user?.email]);
 
