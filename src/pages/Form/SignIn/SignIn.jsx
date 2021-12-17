@@ -2,7 +2,6 @@ import React from "react";
 import { Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-
 import { useHistory, useLocation } from "react-router";
 import useAll from "../../../hooks/useAll";
 import popupSuccess from "../../../popup/popupSuccess";
@@ -34,6 +33,8 @@ const Signin = () => {
     const userPassword = data.password;
     signInWithEmail(userEmail, userPassword)
       .then((result) => {
+        const user = result.user;
+        saveUser(user?.email, user?.displayName, "PUT");
         popupSuccess("login");
         reset();
         history.push(redirectUrl);
@@ -92,7 +93,7 @@ const Signin = () => {
         </Form.Group>
       </Form>
       <small className="text-center d-block text-more-option">
-        Or with Social Profile
+        Or Sign In with Google
       </small>
       <div className="social-btn-box my-3 d-flex justify-content-center align-items-center">
         <button
@@ -101,18 +102,18 @@ const Signin = () => {
         >
           <i className="fab fa-google"></i>
         </button>
-        <button
+        {/* <button
           className="btn-social"
           onClick={() => handleSignInWithSocial(facebookProvider)}
         >
           <i className="fab fa-facebook"></i>
-        </button>
-        <button
+        </button> */}
+        {/* <button
           className="btn-social"
           onClick={() => handleSignInWithSocial(twitterProvider)}
         >
           <i className="fab fa-twitter"></i>
-        </button>
+        </button> */}
       </div>
 
       <small className="text-center d-block">

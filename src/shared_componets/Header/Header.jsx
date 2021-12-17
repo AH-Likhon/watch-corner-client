@@ -36,7 +36,7 @@ const Header = () => {
       <Navbar bg="light" expand="lg">
         <Container>
           <Navbar.Brand as={Link} to="/home">
-            <img src={logo} alt="" />
+            Watch Corner
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -44,8 +44,8 @@ const Header = () => {
               <Nav.Link as={NavLink} activeStyle={activeStyle} to="/home">
                 Home
               </Nav.Link>
-              <Nav.Link as={NavLink} activeStyle={activeStyle} to="/explore">
-                Explore
+              <Nav.Link as={NavLink} activeStyle={activeStyle} to="/watches">
+                Watches
               </Nav.Link>
 
               {user ? (

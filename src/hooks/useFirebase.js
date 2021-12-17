@@ -34,7 +34,8 @@ const useFirebase = () => {
   const facebookProvider = new FacebookAuthProvider();
   const twitterProvider = new TwitterAuthProvider();
 
-  /* -------------------------------- Update User Info ------------------------------ */
+  /* ------------------------------- Update User Info --------------------------- */
+
   const updateUserInfo = (name) => {
     updateProfile(auth.currentUser, {
       displayName: name,
@@ -46,7 +47,7 @@ const useFirebase = () => {
   };
 
 
-  /* -------------------------------- CREATE NEW ACCOUNT --------------------------- */
+  /* ------------------------------ Create New Account -------------------------- */
 
   const createNewAccount = (email, password, name) => {
     setLoading(true);
@@ -67,22 +68,21 @@ const useFirebase = () => {
     setLoading(false);
   };
 
-  /* -------------------------------------------------------------------------- */
-  /*                        SIGN IN WITH EMAIL & PASSWORD                       */
-  /* -------------------------------------------------------------------------- */
+
+  /* ---------------------- Sign in with email and password --------------------- */
   const signInWithEmail = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
-  /* -------------------------------------------------------------------------- */
-  /*                         SIGN IN WITH SOCIAL ACCOUNT                        */
-  /* -------------------------------------------------------------------------- */
+
+  /* ----------------------- Sign in with social account ------------------------ */
+
   const signInWithSocial = (provider) => {
     return signInWithPopup(auth, provider);
   };
 
-  /* -------------------------------------------------------------------------- */
-  /*                                 USER LOGOUT                                */
-  /* -------------------------------------------------------------------------- */
+
+  /* ------------------------------ User Logout -------------------------- */
+
   const logOut = (isfalse) => {
     signOut(auth)
       .then(() => {
@@ -93,9 +93,9 @@ const useFirebase = () => {
       });
   };
 
-  /* -------------------------------------------------------------------------- */
-  /*                               ON AUTH CHANGE                               */
-  /* -------------------------------------------------------------------------- */
+
+  /* ------------------------------ OnAuth Change  -------------------------- */
+
   useEffect(() => {
     const unsubscribed = onAuthStateChanged(
       auth,
@@ -115,9 +115,9 @@ const useFirebase = () => {
     return () => unsubscribed;
   }, [auth]);
 
-  /* -------------------------------------------------------------------------- */
-  /*                             ADD NEW USER TO DB                             */
-  /* -------------------------------------------------------------------------- */
+
+  /* -------------------------- Add new user to database ------------------------ */
+
   const saveUser = (email, displayName, method) => {
     const user = { email, displayName };
     fetch("http://localhost:5000/users", {
@@ -129,9 +129,8 @@ const useFirebase = () => {
     }).then();
   };
 
-  /* -------------------------------------------------------------------------- */
-  /*                               ADMIN PRESENCE                               */
-  /* -------------------------------------------------------------------------- */
+  /* ------------------------------ Admin -------------------------- */
+
   useEffect(() => {
     axios
       .get(`http://localhost:5000/users/${user?.email}`)

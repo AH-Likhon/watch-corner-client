@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import useAll from "../../../hooks/useAll";
 
 const SignUp = () => {
-  const { createNewAccount } = useAll();
+  const { createNewAccount, saveUser } = useAll();
   const {
     register,
     reset,
@@ -18,6 +18,7 @@ const SignUp = () => {
     const userPassword = data.password;
     const userName = data.name;
     createNewAccount(userEmail, userPassword, userName);
+    // saveUser(userEmail, userName, "PUT");
     reset();
   };
 

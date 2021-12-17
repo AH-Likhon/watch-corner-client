@@ -1,11 +1,11 @@
 import React from "react";
 import "./Footer.css";
-import logo from "../../images/logo/logo.png";
 
 const Footer = () => {
   return (
     <footer>
-      <img src={logo} alt="" />
+     
+      <h1 className="fw-bold text-center">Watch Corner</h1>
 
       <ul className="footer-list">
         <li className="footer-item">
@@ -53,7 +53,7 @@ const Footer = () => {
 
       <p className="text-center">
         <small>
-          Time © 2021 Watch Store. All Rights Reserved by Alif Bin Hossain
+          Watch Corner © 2021 Watch Store. All Rights Reserved by Md. Akramul Hoque
         </small>
       </p>
     </footer>
