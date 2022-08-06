@@ -1,4 +1,4 @@
-Live Website: https://watch-corner-44feb.web.app/
+Live Website: https://watch-corner-44feb.firebaseapp.com/
 
 Key Points:
 
