@@ -18,7 +18,7 @@ const MyOrders = () => {
     setTimeout(() => {
       axios
         .get(
-          `https://stormy-plateau-29124.herokuapp.com/my_order/${user?.email}`
+          `https://watch-sevrer.onrender.com/my_order/${user?.email}`
         )
         .then((data) => {
           setMyOrders(data.data);
@@ -45,7 +45,7 @@ const MyOrders = () => {
       if (result.isConfirmed) {
         axios
           .delete(
-            `https://stormy-plateau-29124.herokuapp.com/my_order_list/${id}`
+            `https://watch-sevrer.onrender.com/my_order_list/${id}`
           )
           .then((data) => {
             const isDeleted = data.data.deletedCount;

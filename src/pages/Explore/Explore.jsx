@@ -16,7 +16,7 @@ const Explore = () => {
     setLoading(true);
     setTimeout(() => {
       axios
-        .get("https://stormy-plateau-29124.herokuapp.com/watches")
+        .get("https://watch-sevrer.onrender.com/watches")
         .then((data) => {
           setWatches(data.data);
           setLoading(false);

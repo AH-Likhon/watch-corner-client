@@ -20,7 +20,7 @@ const Home = () => {
     setLoading(true);
     setTimeout(() => {
       axios
-        .get("https://stormy-plateau-29124.herokuapp.com/watches?limit=6")
+        .get("https://watch-sevrer.onrender.com/watches?limit=6")
         .then((data) => {
           setWatches(data.data);
           setLoading(false);

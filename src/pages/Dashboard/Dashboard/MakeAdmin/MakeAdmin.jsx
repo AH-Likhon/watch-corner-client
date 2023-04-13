@@ -14,7 +14,7 @@ const MakeAdmin = () => {
     setLoading(true);
     setTimeout(() => {
       axios
-        .get("https://stormy-plateau-29124.herokuapp.com/admins")
+        .get("https://watch-sevrer.onrender.com/admins")
         .then((data) => {
           setAdmins(data.data);
           setLoading(false);
@@ -35,7 +35,7 @@ const MakeAdmin = () => {
       email: data.email,
     };
     axios
-      .put("https://stormy-plateau-29124.herokuapp.com/users/admin", adminInfo)
+      .put("https://watch-sevrer.onrender.com/users/admin", adminInfo)
       .then((data) => {
         if (data.data.modifiedCount) {
           popupSuccess("create admin");

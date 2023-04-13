@@ -15,7 +15,7 @@ const ManageProducts = () => {
     setLoading(true);
     setTimeout(() => {
       axios
-        .get("https://stormy-plateau-29124.herokuapp.com/watches")
+        .get("https://watch-sevrer.onrender.com/watches")
         .then((data) => {
           setWatches(data.data);
           setLoading(false);
@@ -39,7 +39,7 @@ const ManageProducts = () => {
         if (result.isConfirmed) {
           axios
             .delete(
-              `https://stormy-plateau-29124.herokuapp.com/manage_order/watch/${id}`
+              `https://watch-sevrer.onrender.com/manage_order/watch/${id}`
             )
             .then((data) => {
               const isDeleted = data.data.deletedCount;

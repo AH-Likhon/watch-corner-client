@@ -14,7 +14,7 @@ const Booking = () => {
   const [watch, setWatch] = useState({});
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
-  const url = `https://stormy-plateau-29124.herokuapp.com/watch/${id}`;
+  const url = `https://watch-sevrer.onrender.com/watch/${id}`;
 
   useEffect(() => {
     setLoading(true);
@@ -45,7 +45,7 @@ const Booking = () => {
 
     axios
       .post(
-        "https://stormy-plateau-29124.herokuapp.com/product/booking",
+        "https://watch-sevrer.onrender.com/product/booking",
         orderInfo
       )
       .then((data) => {

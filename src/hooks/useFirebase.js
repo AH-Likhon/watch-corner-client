@@ -120,7 +120,7 @@ const useFirebase = () => {
 
   const saveUser = (email, displayName, method) => {
     const user = { email, displayName };
-    fetch("https://stormy-plateau-29124.herokuapp.com/users", {
+    fetch("https://watch-sevrer.onrender.com/users", {
       method: method,
       headers: {
         "content-type": "application/json",
@@ -133,7 +133,7 @@ const useFirebase = () => {
 
   useEffect(() => {
     axios
-      .get(`https://stormy-plateau-29124.herokuapp.com/users/${user?.email}`)
+      .get(`https://watch-sevrer.onrender.com/users/${user?.email}`)
       .then((data) => setAdmin(data.data.admin));
   }, [user?.email]);
 

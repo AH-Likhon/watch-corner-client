@@ -12,7 +12,7 @@ const Reviews = () => {
     setLoading(true);
     setTimeout(() => {
       axios
-        .get("https://stormy-plateau-29124.herokuapp.com/reviews")
+        .get("https://watch-sevrer.onrender.com/reviews")
         .then((data) => {
           setReviews(data.data);
           setLoading(false);

@@ -40,7 +40,7 @@ const AllOrderItem = ({ order, index, handleOrderDelete }) => {
         }
         axios
           .put(
-            `https://stormy-plateau-29124.herokuapp.com/all_orders/${_id}`,
+            `https://watch-sevrer.onrender.com/all_orders/${_id}`,
             order
           )
           .then((data) => {

@@ -22,7 +22,7 @@ const DashReview = () => {
     }; //customer review information
 
     axios
-      .post("https://stormy-plateau-29124.herokuapp.com/reviews", review)
+      .post("https://watch-sevrer.onrender.com/reviews", review)
       .then((data) => {
         const isAdded = data.data.insertedId;
         if (isAdded) {
